@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- *
+ * Scopped variables
  */
 var bind = 'addEventListener',
     unbind = 'removeEventListener',
@@ -20,7 +20,19 @@ if (touchesSupported) {
 }
 
 /**
+ * Adds a listener to the collection for a specified event.
+ * @public
+ * @function
+ * @name clicktap#on
+ * @param {String} el - DOM element.
+ * @param {Function} listener - Listener function.
+ * @param {Boolean} capture - Indicate if use capture path.
+ * @example
+ * var startDoingStuff = function (event, param1, param2, ...) {
+ *   // Some code here!
+ * };
  *
+ * clicktap.on(document, startDoingStuff);
  */
 function clicktap(el, listener, capture) {
 
@@ -39,16 +51,36 @@ function clicktap(el, listener, capture) {
 }
 
 /**
+ * Adds a listener to the collection for a specified event.
+ * @public
+ * @function
+ * @name clicktap#on
+ * @param {String} el - DOM element.
+ * @param {Function} listener - Listener function.
+ * @param {Boolean} capture - Indicate if use capture path.
+ * @example
+ * var startDoingStuff = function (event, param1, param2, ...) {
+ *   // Some code here!
+ * };
  *
+ * clicktap.on(document, startDoingStuff);
  */
 clicktap.on = clicktap;
 
 /**
- *
+ * Removes a listener from the collection for a specified event.
+ * @public
+ * @function
+ * @name clicktap#on
+ * @param {String} el - DOM element.
+ * @param {Function} listener = Listener function.
+ * @returns itself
+ * @example
+ * clicktap.off(document, startDoingStuff);
  */
 clicktap.off = function(el, listener) {
-  el[unbind](prefix + touch.end, listener.fn);
-  el[unbind](prefix + 'click', listener.fn);
+  el[unbind](touch.end, listener.fn);
+  el[unbind]('click', listener.fn);
   return clicktap;
 };
 
