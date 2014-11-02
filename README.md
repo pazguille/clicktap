@@ -10,8 +10,6 @@
 
     $ component install pazguille/clicktap
 
-See: [https://github.com/component/component](https://github.com/component/component)
-
 ### Standalone
 Also, you can use the standalone version:
 ```html
@@ -19,7 +17,19 @@ Also, you can use the standalone version:
 ```
 
 ## How-to
-[TODO]
+```html
+<button id="btn">Click me</button>
+```
+
+```js
+function handler() {
+  // Some code here!
+}
+
+var btn = document.getElementById('btn');
+
+clicktap(btn, handler);
+```
 
 ## API
 [TODO]
