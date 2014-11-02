@@ -1,0 +1,35 @@
+{
+  "name": "clicktap",
+  "repository": "git@github.com:pazguille/clicktap.git",
+  "description": "A JavaScript library to prevent the 300ms click delay on touch devices.",
+  "author": "@pazguille <guille87paz@gmail.com>",
+  "version": "0.0.1",
+  "ignore": [
+    ".*",
+    "package.json",
+    "component.json",
+    "node_modules",
+    "gulpfile.js",
+    "**/.*",
+    "bower_components",
+    "test"
+  ],
+  "main": "dist/clicktap",
+  "license": "MIT",
+  "homepage": "https://github.com/pazguille/clicktap",
+  "moduleType": [
+    "adecouplemd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "mobile",
+    "touch",
+    "tap",
+    "click",
+    "delay"
+  ],
+  "authors": [
+    "@pazguille <guille87paz@gmail.com>"
+  ]
+}
