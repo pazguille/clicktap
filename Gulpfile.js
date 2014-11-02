@@ -10,7 +10,7 @@ var footer = require('gulp-footer');
 var replace = require('gulp-replace');
 var rename = require('gulp-rename');
 var ugifyjs = require('gulp-uglify');
-var mocha = require('gulp-mocha');
+var mocha = require('gulp-mocha-phantomjs');
 
 /**
  * Package
@@ -83,7 +83,7 @@ gulp.task('min', function() {
  * Test task
  */
 gulp.task('test', function() {
-  return gulp.src('./test/test.js')
+  return gulp.src('./test/test.html')
     .pipe(mocha({'reporter': 'spec'}));
 });
 
