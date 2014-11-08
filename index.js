@@ -6,7 +6,6 @@
 var bind = 'addEventListener',
     unbind = 'removeEventListener',
     doc = window.document,
-    touchesSupported = 'createTouch' in doc,
     msPointerSupported = window.navigator.msPointerEnabled,
     touch = {
       'start': msPointerSupported ? 'MSPointerDown' : 'touchstart',
@@ -15,7 +14,7 @@ var bind = 'addEventListener',
     },
     pointerCanceled = false;
 
-if (touchesSupported) {
+if ('createTouch' in doc) {
   doc[bind](touch.start, function() { pointerCanceled = false; }, false);
   doc[bind](touch.move, function() { pointerCanceled = true; }, false);
 }
@@ -52,10 +51,9 @@ function clicktap(el, listener, capture) {
 }
 
 /**
- * Adds a listener to the collection for a specified event.
+ * Adds a listener to a given HTMLElement on click/tap event.
  * @public
  * @function
- * @name clicktap#on
  * @param {String} el - DOM element.
  * @param {Function} listener - Listener function.
  * @param {Boolean} [capture] - Indicate if use capture path.
@@ -69,10 +67,9 @@ function clicktap(el, listener, capture) {
 clicktap.on = clicktap;
 
 /**
- * Removes a listener from the collection for a specified event.
+ * Removes a listener from a given HTMLElement.
  * @public
  * @function
- * @name clicktap#on
  * @param {String} el - DOM element.
  * @param {Function} listener = Listener function.
  * @returns itself
