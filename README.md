@@ -42,7 +42,7 @@ clicktap(document, litenerFunction, true);
 clicktap.on(document, litenerFunction);
 ```
 
-### clicktap.on(el, listener);
+### clicktap.off(el, listener);
 Removes a `listener` from a given `HTMLElement`.
 - `el` {HTMLElement} - A given `HTMLElement`.
 - `listener` {Function} - A given `listener` to execute on click/tap.
