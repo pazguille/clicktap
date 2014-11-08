@@ -51,11 +51,8 @@ Removes a `listener` from a given `HTMLElement`.
 clicktap.off(document, litenerFunction);
 ```
 
-## Maintained by
-- Guille Paz (Front-end developer | Web standards lover)
-- E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
-- Twitter: [@pazguille](http://twitter.com/pazguille)
-- Web: [http://pazguille.me](http://pazguille.me)
+## Made and maintained with ❤ by
+- [@pazguille](http://twitter.com/pazguille)
 
 ## License
-Licensed under the MIT license. Copyright © 2014.
+MIT license. Copyright © 2014.
