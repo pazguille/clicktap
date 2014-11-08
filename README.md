@@ -10,29 +10,46 @@
 
     $ component install pazguille/clicktap
 
-### Standalone
-Also, you can use the standalone version:
-```html
-<script src="dist/clicktap.js"></script>
-```
-
-## How-to
+## Usage
 ```html
 <button id="btn">Click me</button>
 ```
 
 ```js
-function handler() {
+function litenerFunction() {
   // Some code here!
 }
 
 var btn = document.getElementById('btn');
 
-clicktap(btn, handler);
+clicktap(btn, litenerFunction);
 ```
 
 ## API
-[TODO]
+
+### clicktap(el, listener, [capture]);
+### clicktap.on(el, listener, [capture]);
+Adds a `listener` to a given `HTMLElement` on click/tap event.
+- `el` {HTMLElement} - A given `HTMLElement`.
+- `listener` {Function} - A given `listener` to execute on click/tap.
+- `capture` {Boolean} - Indicate if use capture path.
+
+```js
+clicktap(document, litenerFunction, true);
+
+// or
+
+clicktap.on(document, litenerFunction);
+```
+
+### clicktap.on(el, listener);
+Removes a `listener` from a given `HTMLElement`.
+- `el` {HTMLElement} - A given `HTMLElement`.
+- `listener` {Function} - A given `listener` to execute on click/tap.
+
+```js
+clicktap.off(document, litenerFunction);
+```
 
 ## Maintained by
 - Guille Paz (Front-end developer | Web standards lover)
@@ -41,6 +58,4 @@ clicktap(btn, handler);
 - Web: [http://pazguille.me](http://pazguille.me)
 
 ## License
-Licensed under the MIT license.
-
-Copyright (c) 2014 [@pazguille](http://twitter.com/pazguille).
+Licensed under the MIT license. Copyright © 2014.
