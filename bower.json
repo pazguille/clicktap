@@ -3,7 +3,7 @@
   "repository": "git@github.com:pazguille/clicktap.git",
   "description": "A JavaScript library to prevent the 300ms click delay on touch devices.",
   "author": "@pazguille <guille87paz@gmail.com>",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "ignore": [
     ".*",
     "package.json",
