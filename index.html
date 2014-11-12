@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>clicktap</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+     <header class="demo-header">
+      <h1 class="demo-title">clicktap</h1>
+      <h2 class="demo-intro">A JavaScript library to prevent the 300ms click delay on touch devices.</h2>
+    </header>
+    <main>
+      <div id="logger">Touch the buttons bellow to test...</div>
+      <button id="fast" class="btn">Clicktap</button>
+      <button id="slow" class="btn">Click</button>
+    </main>
+    <footer>
+      <a href="https://github.com/pazguille/clicktap" id="github-ribbon"><img width="149" height="149" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+      by <a href="http://pazguille.me/">Guille Paz</a> with <span class="heart">❤</span>
+      <iframe id="github-button" src="http://ghbtns.com/github-btn.html?user=pazguille&amp;repo=clicktap&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+    </footer>
+
+    <script src="dist/clicktap.min.js"></script>
+    <script>
+      var slow = document.querySelector('#slow');
+      var fast = document.querySelector('#fast');
+      function handler() {
+        logger.innerHTML = 'Fast clicktap!';
+      }
+
+      slow.addEventListener('click', function(eve) {
+        logger.innerHTML = 'Slow click...';
+      });
+
+      clicktap(fast, handler);
+    </script>
+  </body>
+</html>
