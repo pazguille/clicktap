@@ -1,11 +1,9 @@
 'use strict';
 
 /**
- * Private module variables
+ * Privates
  */
-var bind = 'addEventListener',
-    unbind = 'removeEventListener',
-    doc = window.document,
+var doc = window.document,
     msPointerSupported = window.navigator.msPointerEnabled,
     touch = {
       'start': msPointerSupported ? 'MSPointerDown' : 'touchstart',
@@ -14,9 +12,12 @@ var bind = 'addEventListener',
     },
     pointerCanceled = false;
 
+/**
+ * Adds touch events if browser supports it
+ */
 if ('createTouch' in doc) {
-  doc[bind](touch.start, function() { pointerCanceled = false; }, false);
-  doc[bind](touch.move, function() { pointerCanceled = true; }, false);
+  doc.addEventListener(touch.start, function() { pointerCanceled = false; }, false);
+  doc.addEventListener(touch.move, function() { pointerCanceled = true; }, false);
 }
 
 /**
@@ -44,8 +45,8 @@ function clicktap(el, listener, capture) {
 
   listener.fn = fn;
 
-  el[bind](touch.end, listener.fn, capture || false);
-  el[bind]('click', listener.fn, capture || false);
+  el.addEventListener(touch.end, listener.fn, capture || false);
+  el.addEventListener('click', listener.fn, capture || false);
 
   return clicktap;
 }
@@ -77,8 +78,8 @@ clicktap.on = clicktap;
  * clicktap.off(document, startDoingStuff);
  */
 clicktap.off = function(el, listener) {
-  el[unbind](touch.end, listener.fn);
-  el[unbind]('click', listener.fn);
+  el.removeEventListener(touch.end, listener.fn);
+  el.removeEventListener('click', listener.fn);
   return clicktap;
 };
 
