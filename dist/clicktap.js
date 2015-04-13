@@ -47,10 +47,6 @@ function clicktap(el, listener, capture) {
   function fn(eve) {
     if (pointerCanceled) { pointerCanceled = false; return; }
     listener.call(el, eve);
-
-    if (eve.target.tagName === 'A') {
-      eve.preventDefault();
-    }
   }
 
   listener.fn = fn;
