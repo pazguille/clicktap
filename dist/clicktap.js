@@ -51,7 +51,11 @@ function clicktap(el, listener, capture) {
 
   listener.fn = fn;
 
-  el.addEventListener(touch.end, listener.fn, capture || false);
+  // hack for avoiding catching IE's touchend AND click events
+  if (!window.navigator.msPointerEnabled) {
+    el.addEventListener(touch.end, listener.fn, capture || false);
+  }
+
   el.addEventListener('click', listener.fn, capture || false);
 
   return clicktap;
