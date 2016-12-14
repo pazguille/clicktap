@@ -13,12 +13,10 @@
         if (!expr) throw new Error(msg || 'failed');
       }
       window.onload = function() {
-        var runner;
-        if (window.mochaPhantomJS) {
-          runner = mochaPhantomJS.run();
-        } else {
-          runner = mocha.run();
+        if (typeof initMochaPhantomJS === 'function') {
+          initMochaPhantomJS()
         }
+        var runner = mocha.run();
       };
     </script>
     <script src="../dist/clicktap.js"></script>

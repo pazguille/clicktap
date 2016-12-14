@@ -1,7 +1,7 @@
 /*!
  * clicktap - v0.0.3
  *
- * Copyright (c) 2014, @pazguille <guille87paz@gmail.com>
+ * Copyright (c) 2016, @pazguille <guille87paz@gmail.com>
  * Released under the MIT license.
  */
 (function(window) {
