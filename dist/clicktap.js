@@ -47,12 +47,15 @@ function clicktap(el, listener, capture) {
   function fn(eve) {
     if (pointerCanceled) { pointerCanceled = false; return; }
     listener.call(el, eve);
-    eve.preventDefault();
   }
 
   listener.fn = fn;
 
-  el.addEventListener(touch.end, listener.fn, capture || false);
+  // hack for avoiding catching IE's touchend AND click events
+  if (!window.navigator.msPointerEnabled) {
+    el.addEventListener(touch.end, listener.fn, capture || false);
+  }
+
   el.addEventListener('click', listener.fn, capture || false);
 
   return clicktap;
