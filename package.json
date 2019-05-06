@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "better-assert": "^1.0.1",
-    "gulp": "^3.6.2",
+    "gulp": "^4.0.2",
     "gulp-footer": "^1.0.5",
     "gulp-header": "^1.0.5",
     "gulp-mocha-phantomjs": "^0.12.0",
