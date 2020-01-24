@@ -17,7 +17,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.4",
     "gulp-uglify": "^2.0.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^1.0.2"
   },
   "main": "index.js",
   "keywords": [
